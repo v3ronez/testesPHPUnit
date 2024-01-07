@@ -16,6 +16,7 @@
     $leilao->recebeLance(new Lance($joao, 2000));
     $leilao->recebeLance(new Lance($maria, 2500));
 
+    
     $leiloeiro = new Avaliador();
 
 // Act - When
