@@ -10,6 +10,13 @@ use PHPUnit\Framework\TestCase;
 
 class AvaliadorTest extends TestCase
 {
+    private $leiloeiro;
+
+    protected function setUp(): void
+    {
+        $this->leiloeiro = new Avaliador();
+    }
+
     public function testAvaliadorDeveValidarUltimoLance()
     {
         // Arrange - Given
@@ -21,11 +28,11 @@ class AvaliadorTest extends TestCase
         $leilao->recebeLance(new Lance($joao, 2000));
         $leilao->recebeLance(new Lance($maria, 2500));
 
-        $leiloeiro = new Avaliador();
+        $this->leiloeiro;
         // Act - When
-        $leiloeiro->avalia($leilao);
+        $this->leiloeiro->avalia($leilao);
 
-        $maiorValor = $leiloeiro->getMaiorValor();
+        $maiorValor = $this->leiloeiro->getMaiorValor();
 
         // Assert - Then
         $this->assertEquals(2500, $maiorValor);
@@ -42,11 +49,11 @@ class AvaliadorTest extends TestCase
         $leilao->recebeLance(new Lance($maria, 2500));
         $leilao->recebeLance(new Lance($joao, 2000));
 
-        $leiloeiro = new Avaliador();
+        $this->leiloeiro;
         // Act - When
-        $leiloeiro->avalia($leilao);
+        $this->leiloeiro->avalia($leilao);
 
-        $maiorValor = $leiloeiro->getMaiorValor();
+        $maiorValor = $this->leiloeiro->getMaiorValor();
 
         // Assert - Then
         $this->assertEquals(2500, $maiorValor);
