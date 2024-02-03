@@ -2,4 +2,7 @@
     <testsuite name="unit">
         <directory>tests</directory>
     </testsuite>
+    <logging>
+        <log type="testdox-text" target="teste-log.txt"/>
+    </logging>
 </phpunit>

@@ -1,0 +1,14 @@
+Leilao (Models\Leilao)
+ [x] E leilao deve receber lances with data set "dois lances"
+ [x] E leilao deve receber lances with data set "um lance"
+ [x] Leilao so pode receber um lance por usuario por vez
+
+Avaliador (Alura\Leilao\Tests\Service\Avaliador)
+ [x] Avaliador deve validar o maior valor do lance with data set #0
+ [x] Avaliador deve validar o maior valor do lance with data set #1
+ [x] Avaliador deve validar o maior valor do lance with data set #2
+ [x] Avaliador deve pegar ultimo lance with data set #0
+ [x] Avaliador deve pegar ultimo lance with data set #1
+ [x] Avaliador deve pegar ultimo lance with data set #2
+ [x] Avaliador pega 3ultimos lances
+

@@ -9,7 +9,11 @@ use PHPUnit\Framework\TestCase;
 
 class LeilaoTest extends TestCase
 {
-    public function testeLeilaoDeveReceberLances()
+
+    /**
+     * @dataProvider geraLances $leilao
+     */
+    public function testeLeilaoDeveReceberLances(int $qtdLance, Leilao $leilao, array $valores)
     {
         $joao = new Usuario('joao');
         $maria = new Usuario('maria');
@@ -19,8 +23,22 @@ class LeilaoTest extends TestCase
         $leilao->recebeLance(new Lance($joao, 3000));
 
         $this->assertCount(2, $leilao->getLances());
-        $this->assertEquals(1000, $leilao->getLances()[0]->getValor());
-        $this->assertEquals(3000, $leilao->getLances()[1]->getValor());
+        foreach ($valores as $idx => $valor) {
+            self::assertEquals($valor, $leilao->getLances()[$idx]->getValor());
+        }
+    }
+
+    public function testLeilaoSoPodeReceberUmLancePorUsuarioPorVez()
+    {
+        $leilao = new Leilao('variante');
+        $ana = new Usuario('ana');
+        $lance = new Lance($ana, 1000);
+        $lance1 = new Lance($ana, 2000);
+        $leilao->recebeLance($lance);
+        $leilao->recebeLance($lance1);
+
+        self::assertCount(1, $leilao->getLances());
+        self::assertEquals(1000, $lance->getValor());
     }
 
     public function geraLances()
@@ -31,5 +49,13 @@ class LeilaoTest extends TestCase
         $leilao = new Leilao('carro foda');
         $leilao->recebeLance(new Lance($maria, 1000));
         $leilao->recebeLance(new Lance($joao, 3000));
+
+        $leilao2 = new Leilao('moto daora');
+        $leilao2->recebeLance(new Lance($joao, 1000));
+
+        return [
+            'dois lances' => [2, $leilao, [1000, 3000]],
+            'um lance'    => [1, $leilao2, [1000]]
+        ];
     }
 }
