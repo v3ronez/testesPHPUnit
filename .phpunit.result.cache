@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"Alura\\Leilao\\Tests\\Service\\AvaliadorTest::testAvaliadorDeveValidarUltimoLance":0,"Alura\\Leilao\\Tests\\Service\\AvaliadorTest::testAvaliadorDeveValidarLance":0,"Alura\\Leilao\\Tests\\Service\\AvaliadorTest::testAvaliadorPega3ultimosLances":0,"Models\\LeilaoTest::testeLeilaoDeveReceberLances":0.005}}

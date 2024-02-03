@@ -59,7 +59,7 @@ class AvaliadorTest extends TestCase
         $this->assertEquals(2500, $maiorValor);
     }
 
-    public function testAvaliadorPega3ultimosLances()
+    public function testAvaliadorPegaUltimosLances()
     {
         $leilao = new Leilao('Fiat sla');
         $joao = new Usuario('joao');

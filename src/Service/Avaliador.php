@@ -20,8 +20,7 @@ class Avaliador
         $lances = $leilao->getLances();
         usort(
             $lances,
-            fn(Lance $lance1, Lance $lance2) => $lance2->getValor()
-                - $lance1->getValor()
+            fn(Lance $lance1, Lance $lance2) => $lance2->getValor() - $lance1->getValor()
         );
         $this->maioresLances = array_slice($lances, 0, 3);
     }
