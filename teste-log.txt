@@ -2,6 +2,7 @@ Leilao (Models\Leilao)
  [x] E leilao deve receber lances with data set "dois lances"
  [x] E leilao deve receber lances with data set "um lance"
  [x] Leilao so pode receber um lance por usuario por vez
+ [x] Leilao nao deve ter mais de cinco lances por pessoa
 
 Avaliador (Alura\Leilao\Tests\Service\Avaliador)
  [x] Avaliador deve validar o maior valor do lance with data set #0
