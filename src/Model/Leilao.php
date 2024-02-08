@@ -18,13 +18,13 @@ class Leilao
     public function recebeLance(Lance $lance): void
     {
         if (!empty($this->lances) && $this->lanceRepetidoPorUsuario($lance)) {
-            return;
+            throw  new \DomainException('Usuário nao pode enviar dois lances seguidos');
         }
 
         $totalLanceUsuario = $this->quantidadeDeLancesPorUsuario($lance->getUsuario());
 
         if ($totalLanceUsuario >= 5) {
-            return;
+            throw  new \DomainException('Usuário pode dar no maximo 5 (cinco) lances');
         }
         $this->lances[] = $lance;
     }

@@ -35,8 +35,8 @@ class LeilaoTest extends TestCase
         $lance = new Lance($ana, 1000);
         $lance1 = new Lance($ana, 2000);
         $leilao->recebeLance($lance);
+        $this->expectException(\DomainException::class);
         $leilao->recebeLance($lance1);
-
         self::assertCount(1, $leilao->getLances());
         self::assertEquals(1000, $lance->getValor());
     }
@@ -58,6 +58,7 @@ class LeilaoTest extends TestCase
         $leilao->recebeLance(new Lance($joao, 9000));
         $leilao->recebeLance(new Lance($maria, 10000));
 
+        $this->expectException(\DomainException::class);
         $leilao->recebeLance(new Lance($joao, 11000));
 
         self::assertCount(10, $leilao->getLances());
