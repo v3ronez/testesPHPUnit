@@ -125,6 +125,12 @@ class AvaliadorTest extends TestCase
         return $leilao;
     }
 
+    public function testExceptionAoAValiarLeiloesSemLance()
+    {
+        $this->expectException(\DomainException::class);
+        $this->leiloeiro->avalia(new Leilao('fusca daora'));
+    }
+
     public function entregaLeiloes()
     {
         return [
