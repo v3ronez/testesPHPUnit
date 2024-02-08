@@ -96,7 +96,7 @@ class AvaliadorTest extends TestCase
         return $leilao;
     }
 
-    public function leilaoEmOrdemDecrescente()
+    public function leilaoEmOrdemDecrescente(): Leilao
     {
         $leilao = new Leilao('Fiat 147 0KM');
 
@@ -111,7 +111,7 @@ class AvaliadorTest extends TestCase
         return $leilao;
     }
 
-    public function leilaoEmOrdemAleatoria()
+    public function leilaoEmOrdemAleatoria(): Leilao
     {
         $leilao = new Leilao('Fiat 147 0KM');
 
@@ -125,7 +125,17 @@ class AvaliadorTest extends TestCase
         return $leilao;
     }
 
-    public function testExceptionAoAValiarLeiloesSemLance()
+    public function testLeilaoNaoDeveSerAvaliadoAposSerFinalizado()
+    {
+        $this->expectException(\DomainException::class);
+        $leilao = new Leilao('variante');
+        $pessoa = new Usuario('ze');
+        $leilao->recebeLance(new Lance($pessoa, 1000));
+        $leilao->finalizado($leilao);
+        $this->leiloeiro->avalia($leilao);
+    }
+
+    public function testExceptionAoAValiarLeiloesSemLance(): void
     {
         $this->expectException(\DomainException::class);
         $this->leiloeiro->avalia(new Leilao('fusca daora'));

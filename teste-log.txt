@@ -12,5 +12,6 @@ Avaliador (Alura\Leilao\Tests\Service\Avaliador)
  [x] Avaliador deve pegar ultimo lance with data set #1
  [x] Avaliador deve pegar ultimo lance with data set #2
  [x] Avaliador pega 3ultimos lances
+ [x] Leilao nao deve ser avaliado apos ser finalizado
  [x] Exception ao a valiar leiloes sem lance
 

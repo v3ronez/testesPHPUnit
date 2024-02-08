@@ -5,14 +5,15 @@ namespace Alura\Leilao\Model;
 class Leilao
 {
     /** @var Lance[] */
-    private $lances;
-    /** @var string */
-    private $descricao;
+    private array $lances;
+    private string $descricao;
+    public bool $finalizado;
 
     public function __construct(string $descricao)
     {
         $this->descricao = $descricao;
         $this->lances = [];
+        $this->finalizado = false;
     }
 
     public function recebeLance(Lance $lance): void
@@ -27,6 +28,11 @@ class Leilao
             throw  new \DomainException('Usuário pode dar no maximo 5 (cinco) lances');
         }
         $this->lances[] = $lance;
+    }
+
+    public function finalizado(Leilao $leilao)
+    {
+        $this->finalizado = true;
     }
 
     public function getLances(): array
