@@ -2,7 +2,6 @@
 
 namespace Alura\Leilao\Tests\Service;
 
-use Alura\Leilao\Dao\Leilao as LeilaoDao;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Service\Encerrador;
 use PHPUnit\Framework\TestCase;
@@ -50,7 +49,13 @@ class EncerradorTest extends TestCase
             'Variant 1972 0Km',
             new \DateTimeImmutable('10 days ago')
         );
-        $leilaoDao = $this->createMock(LeilaoDao::class);
+//        $leilaoDao = $this->createMock(\Alura\Leilao\Dao\Leilao::class);
+
+        //mock tem que executar o contructor
+        $leilaoDao = $this->getMockBuilder(\Alura\Leilao\Dao\Leilao::class)
+            ->setConstructorArgs([new \PDO('sqlite::momery:')])->getMock();
+
+        //mock tem que executar o contructor
         $leilaoDao->salva($fiat147);
         $leilaoDao->salva($variant);
 

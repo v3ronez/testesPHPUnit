@@ -45,7 +45,7 @@ class Leilao
      */
     private function recuperarLeiloesSeFinalizado(bool $finalizado): array
     {
-        $sql = 'SELECT * FROM leiloes WHERE finalizado = ' . ($finalizado ? 1 : 0);
+        $sql = 'SELECT * FROM leiloes WHERE finalizado = '.($finalizado ? 1 : 0);
         $stm = $this->con->query($sql, \PDO::FETCH_ASSOC);
 
         $dados = $stm->fetchAll();
@@ -63,7 +63,8 @@ class Leilao
 
     public function atualiza(ModelLeilao $leilao)
     {
-        $sql = 'UPDATE leiloes SET descricao = :descricao, dataInicio = :dataInicio, finalizado = :finalizado WHERE id = :id';
+        $sql
+            = 'UPDATE leiloes SET descricao = :descricao, dataInicio = :dataInicio, finalizado = :finalizado WHERE id = :id';
         $stm = $this->con->prepare($sql);
         $stm->bindValue(':descricao', $leilao->recuperarDescricao());
         $stm->bindValue(':dataInicio', $leilao->recuperarDataInicio()->format('Y-m-d'));
