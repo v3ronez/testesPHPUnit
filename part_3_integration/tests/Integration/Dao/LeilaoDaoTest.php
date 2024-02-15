@@ -20,7 +20,7 @@ class LeilaoDaoTest extends TestCase
         self::assertCount(1, $leiloes);
         self::assertContainsOnlyInstancesOf(Leilao::class, $leiloes);
         self::assertSame(
-            'Viariante 0Km',
+            'Variante 0Km',
             $leiloes[0]->recuperarDescricao()
         );
     }

@@ -1,5 +1,6 @@
 /vendor
 .DS_Store
+.idea
 # Created by https://www.toptal.com/developers/gitignore/api/phpstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm
 
