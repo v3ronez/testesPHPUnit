@@ -36,6 +36,30 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/composer" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/part_2_mock/vendor/sebastian/resource-operations" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
@@ -44,6 +68,7 @@
   </component>
   <component name="PhpUnit">
     <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/part_2_mock/phpunit.xml" custom_loader_path="$PROJECT_DIR$/part_2_mock/vendor/autoload.php" use_configuration_file="true" />
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
     </phpunit_settings>
   </component>
