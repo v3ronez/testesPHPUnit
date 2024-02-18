@@ -9,10 +9,19 @@ use PHPUnit\Framework\TestCase;
 
 class LeilaoDaoTest extends TestCase
 {
+    private $pdo;
+
+    protected function setUp(): void
+    {
+        $this->pdo = ConnectionCreator::getConnection();
+        $this->pdo->beginTransaction();
+        //em prod criar o banco em memoria com o self::setUpBeforeClass();
+    }
+
     public function testInsercaoEBuscaDevemFuncionar()
     {
         $leilao = new Leilao('Variante 0Km');
-        $leilaoDao = new LeilaoDao(ConnectionCreator::getConnection());
+        $leilaoDao = new LeilaoDao($this->pdo);
 
         $leilaoDao->salva($leilao);
         $leiloes = $leilaoDao->recuperarNaoFinalizados();
@@ -23,5 +32,11 @@ class LeilaoDaoTest extends TestCase
             'Variante 0Km',
             $leiloes[0]->recuperarDescricao()
         );
+    }
+
+    protected function tearDown(): void
+    {
+//        $this->pdo->exec("DELETE FROM leiloes"); jeito ruim de resolver
+        $this->pdo->rollBack(); // jeito certo
     }
 }
